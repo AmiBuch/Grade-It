@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Grade-It! - An Easy Grading Tool for Online Checking</title>
+    <style>
+        form {
+            margin: auto;
+            width: 40%;
+        }
+
+        .result {
+            margin: auto;
+            width: 35%;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <form action="{{ url_for('main') }}" method="POST">
+        <fieldset>
+            <legend>Input the specified information:</legend>
+            The correct answer (according to authorities):
+            <input name="cor_ans" type="text" required /> N
+            <br>
+            Your student's answer photo:
+            <br>
+            <input name="dumb" type="file" required>
+            <br>
+            Total marks alloted for question: 
+            <br>
+            <input name="marks_me" type="number" required>
+            <br>
+            <br>
+            <input type="submit">
+        </fieldset>
+    </form>
+    <br>
+    <div class="result" align="center">
+    {% if result %}
+        
+        <br> Predicted marks:
+           <p style="font-size:50px">{{ result }}</p>
+    {% endif %}
+</div>
+    <footer>All the results obtained are calculated using a cosine similarity model. For testing purposes only.</footer>
+</body>
+
+</html>
