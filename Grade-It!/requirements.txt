@@ -2,6 +2,6 @@ gunicorn
 flask
 nltk
 pytesseract
-cv2
+opencv-python
 skimage
 sklearn
