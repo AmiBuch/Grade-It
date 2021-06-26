@@ -3,5 +3,5 @@ flask
 nltk
 pytesseract
 opencv-python
-skimage
+scikit-image
 sklearn
